@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="EVEN - Create your smart expense splitting account">
+
+    <meta name="theme-color"
+          content="#6366f1">
+
+    <title>EVEN | Create Account</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- Register CSS -->
+
+    <link rel="stylesheet"
+          href="css/register.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="bg-gradient"></div>
+
+    <div class="blob blob1"></div>
+
+    <div class="blob blob2"></div>
+
+    <div class="blob blob3"></div>
+
+
+
+    <!-- =====================================================
+         THEME BUTTON
+    ====================================================== -->
+
+    <button
+        class="theme-btn"
+        id="themeBtn"
+        type="button"
+        aria-label="Toggle theme">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="container">
+
+
+        <!-- =================================================
+             LEFT PANEL
+        ================================================== -->
+
+        <section class="left-panel">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                </div>
+
+                <div>
+
+                    <h1>EVEN</h1>
+
+                    <span>
+                        Smart Expense Splitting
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO -->
+
+            <div class="hero-text">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                    Smart money management
+
+                </div>
+
+
+                <h2>
+
+                    Manage Shared<br>
+
+                    <span>
+                        Expenses Easily.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Join EVEN and split bills with friends,
+                    roommates and family while keeping every
+                    expense organized in one place.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <h3>15K+</h3>
+
+                    <p>
+                        Users
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+                    <h3>₹5M+</h3>
+
+                    <p>
+                        Expenses Managed
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                    </div>
+
+                    <h3>120K+</h3>
+
+                    <p>
+                        Transactions
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <h3>99.9%</h3>
+
+                    <p>
+                        Secure
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FEATURES -->
+
+            <div class="features">
+
+
+                <div>
+
+                    <span class="feature-check">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    AI Insights
+
+                </div>
+
+
+                <div>
+
+                    <span class="feature-check">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    Expense Reports
+
+                </div>
+
+
+                <div>
+
+                    <span class="feature-check">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    Smart Analytics
+
+                </div>
+
+
+                <div>
+
+                    <span class="feature-check">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    Secure Login
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT PANEL
+        ================================================== -->
+
+        <section class="right-panel">
+
+
+            <div class="register-card">
+
+
+                <!-- =================================================
+                     HEADER
+                ================================================== -->
+
+                <div class="welcome">
+
+
+                    <div class="welcome-icon">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+
+                    <p>
+                        Start managing your shared expenses with EVEN.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FORM
+                ================================================== -->
+
+                <form
+                    id="registerForm"
+                    autocomplete="on">
+
+
+                    <!-- PROFILE -->
+
+                    <div class="profile-upload">
+
+
+                        <div class="profile-preview">
+
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                id="previewImage"
+                                alt="Profile preview">
+
+                        </div>
+
+
+                        <input
+                            type="file"
+                            id="profileImage"
+                            accept="image/*"
+                            hidden>
+
+
+                        <button
+                            type="button"
+                            id="uploadBtn">
+
+                            <i class="fa-solid fa-camera"></i>
+
+                            Upload Photo
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="input-group">
+
+                        <label for="fullname">
+                            Full Name
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user"></i>
+
+
+                            <input
+                                type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- USERNAME -->
+
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-at"></i>
+
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Choose a username"
+                                autocomplete="username"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="input-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a strong password"
+                                autocomplete="new-password"
+                                required>
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD STRENGTH -->
+
+                    <div class="strength">
+
+                        <div id="strengthBar"></div>
+
+                    </div>
+
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required>
+
+
+                            <button
+                                type="button"
+                                id="toggleConfirm"
+                                class="password-toggle"
+                                aria-label="Show password">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TERMS -->
+
+                    <div class="options">
+
+                        <label class="terms">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required>
+
+                            <span>
+
+                                I agree to the
+
+                                <a href="#">
+                                    Terms & Conditions
+                                </a>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- REGISTER BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="register-btn"
+                        id="registerButton">
+
+
+                        <span id="btnText">
+                            Create Account
+                        </span>
+
+
+                        <span
+                            id="loader"
+                            class="loader">
+                        </span>
+
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =================================================
+                     SECURITY
+                ================================================== -->
+
+                <div class="register-security">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Your information is protected with secure authentication.
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOGIN
+                ================================================== -->
+
+                <div class="register">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+
+
+                <!-- FOOTER -->
+
+                <div class="footer">
+
+                    © 2026 EVEN
+
+                    <span>•</span>
+
+                    Smart Expense Splitting
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FLOATING CARDS
+    ====================================================== -->
+
+
+    <div class="floating-card card1">
+
+        <div class="floating-icon">
+
+            <i class="fa-solid fa-wallet"></i>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Smart Budget
+            </h4>
+
+            <span>
+                Track Every Rupee
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="floating-card card2">
+
+        <div class="floating-icon">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Analytics
+            </h4>
+
+            <span>
+                Visual Reports
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="floating-card card3">
+
+        <div class="floating-icon">
+
+            <i class="fa-solid fa-users"></i>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Groups
+            </h4>
+
+            <span>
+                Split with Friends
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="alert"
+        aria-live="polite">
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PRELOADER
+    ====================================================== -->
+
+    <div id="preloader">
+
+        <div class="loader-box">
+
+            <div class="loader-logo">
+
+                <i class="fa-solid fa-wallet"></i>
+
+            </div>
+
+
+            <h2>
+                EVEN
+            </h2>
+
+
+            <p>
+                Creating your experience...
+            </p>
+
+
+            <div class="loading-bar">
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/register.js"></script>
+
+
+</body>
+
+</html>

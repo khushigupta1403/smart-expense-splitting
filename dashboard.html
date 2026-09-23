@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EVEN | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+
+        <div>
+            <h2>EVEN</h2>
+            <span>Smart Expenses</span>
+        </div>
+
+    </div>
+
+    <div class="menu-title">MAIN MENU</div>
+
+    <nav class="menu">
+
+        <a href="dashboard.html" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="groups.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Groups</span>
+        </a>
+
+        <a href="expenses.html">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Expenses</span>
+        </a>
+
+        <a href="analytics.html">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Analytics</span>
+        </a>
+
+        <a href="reports.html">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Reports</span>
+        </a>
+
+    </nav>
+
+    <div class="menu-title account-title">ACCOUNT</div>
+
+    <nav class="menu">
+
+        <a href="profile.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Profile</span>
+        </a>
+
+        <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="login.html" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebar-help">
+
+        <div class="help-circle">
+            <i class="fa-regular fa-circle-question"></i>
+        </div>
+
+        <div>
+            <strong>Need help?</strong>
+            <span>We're here for you</span>
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="main">
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <button class="mobile-menu" id="mobileMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search expenses, groups...">
+
+        </div>
+
+        <div class="nav-actions">
+
+            <!-- THEME -->
+
+            <button
+                class="nav-button"
+                id="themeBtn"
+                type="button">
+
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+
+            </button>
+
+
+            <!-- NOTIFICATION -->
+
+            <div class="notification-wrapper">
+
+                <button
+                    class="nav-button"
+                    id="notificationBtn"
+                    type="button">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-badge">3</span>
+
+                </button>
+
+                <div
+                    class="notification-panel"
+                    id="notificationPanel">
+
+                    <div class="notification-header">
+                        <strong>Notifications</strong>
+                        <span>3 new</span>
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon purple">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+
+                        <div>
+                            <strong>New expense added</strong>
+                            <p>Rahul added Movie Tickets</p>
+                            <small>10 min ago</small>
+                        </div>
+
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon green">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <div>
+                            <strong>Payment received</strong>
+                            <p>₹850 from Rahul</p>
+                            <small>2 hours ago</small>
+                        </div>
+
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon blue">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+
+                        <div>
+                            <strong>New member</strong>
+                            <p>Priya joined Goa Trip</p>
+                            <small>Yesterday</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-wrapper">
+
+                <button
+                    class="profile-button"
+                    id="profileBtn">
+
+                    <div class="avatar">
+                        KG
+                    </div>
+
+                    <div class="profile-text">
+                        <strong>Khushi Gupta</strong>
+                        <span>Premium User</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div
+                    class="profile-menu"
+                    id="profileMenu">
+
+                    <a href="profile.html">
+                        <i class="fa-regular fa-user"></i>
+                        Profile
+                    </a>
+
+                    <a href="settings.html">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+
+                    <hr>
+
+                    <a href="login.html" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="content">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome">
+
+            <div>
+
+                <span class="eyebrow">
+                    <i class="fa-solid fa-sparkles"></i>
+                    YOUR FINANCIAL OVERVIEW
+                </span>
+
+                <h1>
+                    Good evening, Khushi 👋
+                </h1>
+
+                <p>
+                    Stay on top of your shared expenses and settle up with ease.
+                </p>
+
+            </div>
+
+            <div class="welcome-buttons">
+
+                <button
+                    class="button secondary"
+                    onclick="window.location.href='reports.html'">
+
+                    <i class="fa-solid fa-chart-column"></i>
+                    Reports
+
+                </button>
+
+                <button
+                    class="button primary"
+                    onclick="window.location.href='expenses.html'">
+
+                    <i class="fa-solid fa-plus"></i>
+                    Add Expense
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card balance">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <span class="growth">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        12%
+                    </span>
+
+                </div>
+
+                <span class="stat-label">Total Balance</span>
+
+                <h2 id="totalBalance">₹12,450</h2>
+
+                <p>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    12% from last month
+                </p>
+
+            </div>
+
+
+            <div class="stat-card owe">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <span class="pending">
+                        3 pending
+                    </span>
+
+                </div>
+
+                <span class="stat-label">You Owe</span>
+
+                <h2 id="youOwe">₹2,850</h2>
+
+                <p>
+                    Payments to settle
+                </p>
+
+            </div>
+
+
+            <div class="stat-card receive">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                    <span class="people">
+                        5 people
+                    </span>
+
+                </div>
+
+                <span class="stat-label">You Get</span>
+
+                <h2 id="youGet">₹6,200</h2>
+
+                <p>
+                    Friends owe you
+                </p>
+
+            </div>
+
+
+            <div class="stat-card spending">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <span class="month">
+                        August
+                    </span>
+
+                </div>
+
+                <span class="stat-label">This Month</span>
+
+                <h2 id="thisMonth">₹18,500</h2>
+
+                <div class="budget-bar">
+
+                    <span></span>
+
+                </div>
+
+                <p>
+                    74% of monthly budget
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHART AREA ================= -->
+
+        <section class="charts-grid">
+
+
+            <!-- DONUT -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Expense Distribution</h2>
+                        <p>Where your money goes</p>
+                    </div>
+
+                    <button class="filter-button">
+                        This Month
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+                <div class="donut-area">
+
+                    <div class="donut-chart">
+
+                        <canvas id="expenseChart"></canvas>
+
+                        <div class="donut-center">
+                            <strong>₹18.5K</strong>
+                            <span>Total spent</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="legend">
+
+                    <div>
+                        <span class="dot food"></span>
+                        <strong>Food</strong>
+                        <b>35%</b>
+                    </div>
+
+                    <div>
+                        <span class="dot travel"></span>
+                        <strong>Travel</strong>
+                        <b>25%</b>
+                    </div>
+
+                    <div>
+                        <span class="dot shopping"></span>
+                        <strong>Shopping</strong>
+                        <b>20%</b>
+                    </div>
+
+                    <div>
+                        <span class="dot bills"></span>
+                        <strong>Bills</strong>
+                        <b>20%</b>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LINE -->
+
+            <div class="card spending-chart-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Monthly Spending</h2>
+                        <p>Your spending trend in 2026</p>
+                    </div>
+
+                    <button class="filter-button">
+                        2026
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+                <div class="line-chart">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+
+                <div class="chart-bottom">
+
+                    <div>
+                        <span>Average</span>
+                        <strong>₹14,820</strong>
+                    </div>
+
+                    <div>
+                        <span>Highest</span>
+                        <strong>₹21,400</strong>
+                    </div>
+
+                    <div>
+                        <span>Lowest</span>
+                        <strong>₹9,850</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECENT EXPENSES ================= -->
+
+        <section class="card expenses-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Recent Expenses</h2>
+                    <p>Your latest shared transactions</p>
+                </div>
+
+                <a href="expenses.html" class="view-link">
+                    View all
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="expense-table">
+
+                <div class="table-head">
+                    <span>EXPENSE</span>
+                    <span>GROUP</span>
+                    <span>PAID BY</span>
+                    <span>DATE</span>
+                    <span>AMOUNT</span>
+                    <span>STATUS</span>
+                </div>
+
+
+                <div class="expense-row">
+
+                    <div class="expense-title">
+
+                        <div class="expense-icon food-icon">
+                            <i class="fa-solid fa-pizza-slice"></i>
+                        </div>
+
+                        <div>
+                            <strong>Pizza Night</strong>
+                            <span>Food</span>
+                        </div>
+
+                    </div>
+
+                    <span>Roommates</span>
+
+                    <span>You</span>
+
+                    <span>07 Aug 2026</span>
+
+                    <strong>₹850</strong>
+
+                    <span class="status settled">
+                        Settled
+                    </span>
+
+                </div>
+
+
+                <div class="expense-row">
+
+                    <div class="expense-title">
+
+                        <div class="expense-icon movie-icon">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+
+                        <div>
+                            <strong>Movie Tickets</strong>
+                            <span>Entertainment</span>
+                        </div>
+
+                    </div>
+
+                    <span>College Friends</span>
+
+                    <span>Rahul</span>
+
+                    <span>06 Aug 2026</span>
+
+                    <strong>₹1,200</strong>
+
+                    <span class="status pending-status">
+                        Pending
+                    </span>
+
+                </div>
+
+
+                <div class="expense-row">
+
+                    <div class="expense-title">
+
+                        <div class="expense-icon travel-icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+
+                        <div>
+                            <strong>Goa Hotel</strong>
+                            <span>Travel</span>
+                        </div>
+
+                    </div>
+
+                    <span>Goa Trip</span>
+
+                    <span>Priya</span>
+
+                    <span>05 Aug 2026</span>
+
+                    <strong>₹6,400</strong>
+
+                    <span class="status pending-status">
+                        Pending
+                    </span>
+
+                </div>
+
+
+                <div class="expense-row">
+
+                    <div class="expense-title">
+
+                        <div class="expense-icon coffee-icon">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+
+                        <div>
+                            <strong>Coffee</strong>
+                            <span>Food</span>
+                        </div>
+
+                    </div>
+
+                    <span>Office Team</span>
+
+                    <span>You</span>
+
+                    <span>04 Aug 2026</span>
+
+                    <strong>₹320</strong>
+
+                    <span class="status settled">
+                        Settled
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOWER GRID ================= -->
+
+        <section class="lower-grid">
+
+
+            <!-- GROUPS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Your Groups</h2>
+                        <p>Recently active groups</p>
+                    </div>
+
+                    <a href="groups.html" class="view-link">
+                        View all
+                    </a>
+
+                </div>
+
+
+                <div class="groups">
+
+                    <a href="groups.html" class="group">
+
+                        <div class="group-avatar purple">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <div class="group-details">
+                            <strong>Roommates</strong>
+                            <span>5 members · 12 expenses</span>
+                        </div>
+
+                        <strong>₹8,420</strong>
+
+                    </a>
+
+
+                    <a href="groups.html" class="group">
+
+                        <div class="group-avatar blue">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </div>
+
+                        <div class="group-details">
+                            <strong>Goa Trip</strong>
+                            <span>8 members · 24 expenses</span>
+                        </div>
+
+                        <strong>₹28,500</strong>
+
+                    </a>
+
+
+                    <a href="groups.html" class="group">
+
+                        <div class="group-avatar pink">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div class="group-details">
+                            <strong>College Friends</strong>
+                            <span>6 members · 18 expenses</span>
+                        </div>
+
+                        <strong>₹12,200</strong>
+
+                    </a>
+
+
+                    <a href="groups.html" class="group">
+
+                        <div class="group-avatar green">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <div class="group-details">
+                            <strong>Office Team</strong>
+                            <span>4 members · 9 expenses</span>
+                        </div>
+
+                        <strong>₹4,850</strong>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI -->
+
+            <div class="card ai-card">
+
+                <div class="ai-heading">
+
+                    <div class="ai-logo">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div>
+                        <h2>AI Smart Insights</h2>
+                        <p>Personalized financial tips</p>
+                    </div>
+
+                </div>
+
+
+                <div class="ai-insight">
+
+                    <div class="ai-insight-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+
+                    <p>
+                        Food spending increased by
+                        <strong>18%</strong>
+                        this month.
+                    </p>
+
+                </div>
+
+
+                <div class="ai-insight">
+
+                    <div class="ai-insight-icon">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+
+                    <p>
+                        You could save around
+                        <strong>₹2,300</strong>
+                        by reducing dining expenses.
+                    </p>
+
+                </div>
+
+
+                <div class="ai-insight">
+
+                    <div class="ai-insight-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <p>
+                        Overall spending is
+                        <strong>12%</strong>
+                        higher than last month.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="ai-button"
+                    onclick="window.location.href='analytics.html'">
+
+                    View Detailed Analysis
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <section class="quick-grid">
+
+            <button
+                class="quick-card"
+                onclick="window.location.href='expenses.html'">
+
+                <div class="quick-icon purple">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <div>
+                    <strong>Add Expense</strong>
+                    <span>Record a new expense</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+                class="quick-card"
+                onclick="window.location.href='groups.html'">
+
+                <div class="quick-icon blue">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+
+                <div>
+                    <strong>Create Group</strong>
+                    <span>Split expenses together</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+                class="quick-card"
+                onclick="exportDashboard()">
+
+                <div class="quick-icon green">
+                    <i class="fa-solid fa-file-export"></i>
+                </div>
+
+                <div>
+                    <strong>Export Report</strong>
+                    <span>Download your summary</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            <strong>EVEN</strong>
+            <span>Smart Expense Splitting · © 2026</span>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<div id="toast"></div>
+
+
+<script src="./js/dashboard.js"></script>
+
+</body>
+</html>

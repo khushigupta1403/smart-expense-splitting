@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EVEN | Groups</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/groups.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <div>
+                <h2>EVEN</h2>
+                <span>Smart Expenses</span>
+            </div>
+        </div>
+
+        <div class="menu-label">MENU</div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="groups.html" class="active">
+                <i class="fa-solid fa-users"></i>
+                <span>Groups</span>
+            </a>
+
+            <a href="expenses.html">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Expenses</span>
+            </a>
+
+            <a href="analytics.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+            <a href="reports.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="menu-label account-label">ACCOUNT</div>
+
+        <nav class="sidebar-menu">
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" onclick="logout()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-box">
+                <div class="help-icon">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <span>We're here for you</span>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="searchGroups"
+                    placeholder="Search groups...">
+            </div>
+
+            <div class="nav-right">
+
+                <button class="nav-icon" id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="nav-icon notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </button>
+
+                <a href="profile.html" class="profile">
+
+                    <div class="profile-avatar">
+                        KG
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Khushi Gupta</strong>
+                        <small>Premium User</small>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- PAGE HEADER -->
+            <section class="page-header">
+
+                <div>
+                    <span class="eyebrow">EXPENSE MANAGEMENT</span>
+
+                    <h1>Your Groups</h1>
+
+                    <p>
+                        Manage your shared expenses and keep everyone
+                        on the same page.
+                    </p>
+                </div>
+
+                <button class="primary-btn" id="openModal">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Group
+                </button>
+
+            </section>
+
+
+            <!-- SUMMARY -->
+            <section class="summary">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon purple">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Groups</span>
+                        <h2 id="totalGroups">4</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon blue">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Expenses</span>
+                        <h2 id="totalExpenses">₹53,970</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon green">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                    <div>
+                        <span>You Get</span>
+                        <h2 id="totalGet">₹6,200</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon orange">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <div>
+                        <span>You Owe</span>
+                        <h2 id="totalOwe">₹2,850</h2>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TOOLBAR -->
+            <section class="toolbar">
+
+                <div class="toolbar-title">
+                    <h2>All Groups</h2>
+                    <span id="groupCount">4 groups</span>
+                </div>
+
+                <div class="toolbar-actions">
+
+                    <select id="sortGroups">
+                        <option value="recent">Recently Used</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="amount">Highest Expense</option>
+                        <option value="members">Most Members</option>
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- GROUP GRID -->
+            <section class="group-grid" id="groupGrid">
+
+                <!-- GROUP 1 -->
+                <article class="group-card"
+                         data-name="Roommates"
+                         data-amount="8420"
+                         data-members="5">
+
+                    <div class="group-cover purple-cover">
+
+                        <div class="group-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <button class="more-btn"
+                                onclick="toggleMenu(this)">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                        <div class="action-menu">
+                            <button onclick="editGroup('Roommates')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteGroup(this)">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="group-content">
+
+                        <div class="group-title">
+                            <div>
+                                <h3>Roommates</h3>
+                                <p>Shared apartment expenses</p>
+                            </div>
+
+                            <span class="status active-status">
+                                Active
+                            </span>
+                        </div>
+
+                        <div class="members">
+
+                            <div class="avatars">
+                                <span>KG</span>
+                                <span>RK</span>
+                                <span>PS</span>
+                                <span>AM</span>
+                                <span>+1</span>
+                            </div>
+
+                            <small>5 Members</small>
+
+                        </div>
+
+                        <div class="group-info-row">
+
+                            <div>
+                                <span>Total Expenses</span>
+                                <strong>₹8,420</strong>
+                            </div>
+
+                            <div>
+                                <span>Your Balance</span>
+                                <strong class="positive">+₹1,250</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-group"
+                                onclick="openGroup('Roommates')">
+
+                            View Group
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- GROUP 2 -->
+                <article class="group-card"
+                         data-name="Goa Trip"
+                         data-amount="28500"
+                         data-members="8">
+
+                    <div class="group-cover blue-cover">
+
+                        <div class="group-icon">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </div>
+
+                        <button class="more-btn"
+                                onclick="toggleMenu(this)">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                        <div class="action-menu">
+
+                            <button onclick="editGroup('Goa Trip')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteGroup(this)">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="group-content">
+
+                        <div class="group-title">
+
+                            <div>
+                                <h3>Goa Trip</h3>
+                                <p>Goa vacation expenses</p>
+                            </div>
+
+                            <span class="status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="members">
+
+                            <div class="avatars">
+                                <span>KG</span>
+                                <span>PS</span>
+                                <span>RK</span>
+                                <span>AS</span>
+                                <span>+4</span>
+                            </div>
+
+                            <small>8 Members</small>
+
+                        </div>
+
+                        <div class="group-info-row">
+
+                            <div>
+                                <span>Total Expenses</span>
+                                <strong>₹28,500</strong>
+                            </div>
+
+                            <div>
+                                <span>Your Balance</span>
+                                <strong class="negative">-₹1,850</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-group"
+                                onclick="openGroup('Goa Trip')">
+
+                            View Group
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- GROUP 3 -->
+                <article class="group-card"
+                         data-name="College Friends"
+                         data-amount="12200"
+                         data-members="6">
+
+                    <div class="group-cover pink-cover">
+
+                        <div class="group-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <button class="more-btn"
+                                onclick="toggleMenu(this)">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                        <div class="action-menu">
+
+                            <button onclick="editGroup('College Friends')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteGroup(this)">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="group-content">
+
+                        <div class="group-title">
+
+                            <div>
+                                <h3>College Friends</h3>
+                                <p>College hangouts and events</p>
+                            </div>
+
+                            <span class="status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="members">
+
+                            <div class="avatars">
+                                <span>KG</span>
+                                <span>RS</span>
+                                <span>AK</span>
+                                <span>NS</span>
+                                <span>+2</span>
+                            </div>
+
+                            <small>6 Members</small>
+
+                        </div>
+
+                        <div class="group-info-row">
+
+                            <div>
+                                <span>Total Expenses</span>
+                                <strong>₹12,200</strong>
+                            </div>
+
+                            <div>
+                                <span>Your Balance</span>
+                                <strong class="positive">+₹750</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-group"
+                                onclick="openGroup('College Friends')">
+
+                            View Group
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- GROUP 4 -->
+                <article class="group-card"
+                         data-name="Office Team"
+                         data-amount="4850"
+                         data-members="4">
+
+                    <div class="group-cover green-cover">
+
+                        <div class="group-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <button class="more-btn"
+                                onclick="toggleMenu(this)">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                        <div class="action-menu">
+
+                            <button onclick="editGroup('Office Team')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteGroup(this)">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="group-content">
+
+                        <div class="group-title">
+
+                            <div>
+                                <h3>Office Team</h3>
+                                <p>Team lunches and activities</p>
+                            </div>
+
+                            <span class="status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="members">
+
+                            <div class="avatars">
+                                <span>KG</span>
+                                <span>AM</span>
+                                <span>RS</span>
+                                <span>+1</span>
+                            </div>
+
+                            <small>4 Members</small>
+
+                        </div>
+
+                        <div class="group-info-row">
+
+                            <div>
+                                <span>Total Expenses</span>
+                                <strong>₹4,850</strong>
+                            </div>
+
+                            <div>
+                                <span>Your Balance</span>
+                                <strong class="positive">+₹300</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-group"
+                                onclick="openGroup('Office Team')">
+
+                            View Group
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- EMPTY STATE -->
+            <div class="empty-state" id="emptyState">
+
+                <div class="empty-icon">
+                    <i class="fa-solid fa-users-slash"></i>
+                </div>
+
+                <h3>No groups found</h3>
+
+                <p>
+                    Create a group or change your search.
+                </p>
+
+                <button class="primary-btn" onclick="openCreateModal()">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Group
+                </button>
+
+            </div>
+
+
+            <footer class="footer">
+                <span>© 2026 EVEN</span>
+                <span>Smart Expense Splitting</span>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- CREATE GROUP MODAL -->
+<div class="modal-overlay" id="groupModal">
+
+    <div class="modal">
+
+        <button class="close-modal" onclick="closeCreateModal()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+                <h2>Create New Group</h2>
+                <p>Start splitting expenses with your group.</p>
+            </div>
+
+        </div>
+
+        <form id="groupForm">
+
+            <div class="form-group">
+
+                <label for="groupName">
+                    Group Name
+                </label>
+
+                <input
+                    type="text"
+                    id="groupName"
+                    placeholder="e.g. Family, Trip, Roommates"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="groupDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="groupDescription"
+                    placeholder="What is this group for?"
+                    rows="3"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="groupType">
+                    Group Type
+                </label>
+
+                <select id="groupType">
+
+                    <option value="home">
+                        Home
+                    </option>
+
+                    <option value="travel">
+                        Travel
+                    </option>
+
+                    <option value="college">
+                        College
+                    </option>
+
+                    <option value="work">
+                        Work
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    onclick="closeCreateModal()">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-plus"></i>
+                    Create Group
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Success</span>
+</div>
+
+
+<script src="js/groups.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EVEN | Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <div class="logo-text">
+                <h2>EVEN</h2>
+                <span>Smart Expenses</span>
+            </div>
+        </div>
+
+        <div class="menu-title">MAIN MENU</div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="groups.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Groups</span>
+            </a>
+
+            <a href="expenses.html">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Expenses</span>
+            </a>
+
+            <a href="analytics.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+            <a href="reports.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="menu-title account-title">ACCOUNT</div>
+
+        <nav class="sidebar-menu">
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" id="logoutLink">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-help">
+
+            <div class="help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <div>
+                <strong>Need help?</strong>
+                <span>We're here for you</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <span class="page-label">ACCOUNT</span>
+
+                <h1>Settings</h1>
+
+                <p>
+                    Personalize your EVEN experience and manage your account.
+                </p>
+            </div>
+
+            <div class="top-actions">
+
+                <button
+                    class="theme-button"
+                    id="quickTheme"
+                    type="button"
+                    title="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <div class="user-mini">
+
+                    <div class="mini-avatar">KG</div>
+
+                    <div>
+                        <strong>Khushi Gupta</strong>
+                        <span>Premium User</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- SETTINGS LAYOUT -->
+        <div class="settings-layout">
+
+            <!-- SETTINGS NAVIGATION -->
+            <aside class="settings-nav">
+
+                <div class="nav-heading">
+                    SETTINGS
+                </div>
+
+                <a href="#appearance" class="setting-nav-link active">
+                    <i class="fa-solid fa-palette"></i>
+                    <span>Appearance</span>
+                </a>
+
+                <a href="#preferences" class="setting-nav-link">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Preferences</span>
+                </a>
+
+                <a href="#notifications" class="setting-nav-link">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+
+                <a href="#privacy" class="setting-nav-link">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Privacy & Security</span>
+                </a>
+
+                <a href="#data" class="setting-nav-link">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Data & Storage</span>
+                </a>
+
+                <a href="#account" class="setting-nav-link">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>Account</span>
+                </a>
+
+            </aside>
+
+
+            <!-- SETTINGS CONTENT -->
+            <section class="settings-content">
+
+
+                <!-- APPEARANCE -->
+                <div class="settings-card" id="appearance">
+
+                    <div class="card-title">
+
+                        <div class="title-icon purple">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+
+                        <div>
+                            <h2>Appearance</h2>
+                            <p>Customize how EVEN looks on your device.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+
+                            <div>
+                                <h3>Dark Mode</h3>
+                                <p>
+                                    Use a darker interface for comfortable viewing.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-compress"></i>
+                            </div>
+
+                            <div>
+                                <h3>Compact Mode</h3>
+                                <p>
+                                    Reduce spacing to display more information.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="compactMode">
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREFERENCES -->
+                <div class="settings-card" id="preferences">
+
+                    <div class="card-title">
+
+                        <div class="title-icon blue">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+
+                        <div>
+                            <h2>Expense Preferences</h2>
+                            <p>Configure how your expenses are managed.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Currency</label>
+
+                            <div class="select-wrapper">
+                                <i class="fa-solid fa-coins"></i>
+
+                                <select id="currency">
+                                    <option value="INR">INR ₹ — Indian Rupee</option>
+                                    <option value="USD">USD $ — US Dollar</option>
+                                    <option value="EUR">EUR € — Euro</option>
+                                    <option value="GBP">GBP £ — British Pound</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Default Split Method</label>
+
+                            <div class="select-wrapper">
+                                <i class="fa-solid fa-divide"></i>
+
+                                <select id="splitMethod">
+                                    <option value="equal">Equal Split</option>
+                                    <option value="exact">Exact Amounts</option>
+                                    <option value="percentage">Percentage</option>
+                                    <option value="shares">Shares</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Default Category</label>
+
+                            <div class="select-wrapper">
+                                <i class="fa-solid fa-tag"></i>
+
+                                <select id="category">
+                                    <option>Food & Dining</option>
+                                    <option>Travel</option>
+                                    <option>Shopping</option>
+                                    <option>Entertainment</option>
+                                    <option>Bills & Utilities</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Decimal Precision</label>
+
+                            <div class="select-wrapper">
+                                <i class="fa-solid fa-calculator"></i>
+
+                                <select id="precision">
+                                    <option value="0">0 decimals</option>
+                                    <option value="2" selected>2 decimals</option>
+                                    <option value="3">3 decimals</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="settings-card" id="notifications">
+
+                    <div class="card-title">
+
+                        <div class="title-icon green">
+                            <i class="fa-regular fa-bell"></i>
+                        </div>
+
+                        <div>
+                            <h2>Notifications</h2>
+                            <p>Choose which notifications you want to receive.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <div class="setting-icon green">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+
+                            <div>
+                                <h3>Expense Reminders</h3>
+                                <p>Get reminders about unsettled expenses.</p>
+                            </div>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="expenseNotifications" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <div class="setting-icon blue">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                            </div>
+
+                            <div>
+                                <h3>Payment Reminders</h3>
+                                <p>Receive reminders when payments are due.</p>
+                            </div>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="paymentNotifications" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <div class="setting-icon purple">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <div>
+                                <h3>Group Activity</h3>
+                                <p>Stay updated about changes in your groups.</p>
+                            </div>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="groupNotifications" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <div class="setting-icon orange">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div>
+                                <h3>Weekly Summary</h3>
+                                <p>Receive a weekly overview of your spending.</p>
+                            </div>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="weeklySummary">
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRIVACY -->
+                <div class="settings-card" id="privacy">
+
+                    <div class="card-title">
+
+                        <div class="title-icon orange">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h2>Privacy & Security</h2>
+                            <p>Keep your financial information protected.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+
+                            <div class="setting-icon orange">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </div>
+
+                            <div>
+                                <h3>Privacy Mode</h3>
+                                <p>Hide sensitive balances and financial values.</p>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="privacy">
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="security-row">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+
+                        <div class="security-info">
+                            <h3>Password</h3>
+                            <p>Last changed recently</p>
+                        </div>
+
+                        <button class="outline-button" id="changePassword">
+                            Change Password
+                        </button>
+
+                    </div>
+
+
+                    <div class="security-row">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+
+                        <div class="security-info">
+                            <h3>Two-Factor Authentication</h3>
+                            <p>Add another layer of security to your account.</p>
+                        </div>
+
+                        <button class="outline-button" id="twoFactor">
+                            Enable
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATA -->
+                <div class="settings-card" id="data">
+
+                    <div class="card-title">
+
+                        <div class="title-icon cyan">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div>
+                            <h2>Data & Storage</h2>
+                            <p>Manage your EVEN data and preferences.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="data-actions">
+
+                        <div class="data-action">
+
+                            <div class="data-icon">
+                                <i class="fa-solid fa-file-export"></i>
+                            </div>
+
+                            <div>
+                                <h3>Export Expenses</h3>
+                                <p>Download your expense information.</p>
+                            </div>
+
+                            <button class="outline-button" id="exportData">
+                                Export
+                            </button>
+
+                        </div>
+
+
+                        <div class="data-action">
+
+                            <div class="data-icon">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+
+                            <div>
+                                <h3>Generate Report</h3>
+                                <p>Create a summary of your financial activity.</p>
+                            </div>
+
+                            <button class="outline-button" id="generateReport">
+                                Generate
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT -->
+                <div class="settings-card" id="account">
+
+                    <div class="card-title">
+
+                        <div class="title-icon green">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+
+                        <div>
+                            <h2>Account</h2>
+                            <p>Manage your EVEN account.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-row">
+
+                        <div class="account-user">
+
+                            <div class="account-avatar">
+                                KG
+                            </div>
+
+                            <div>
+                                <strong>Khushi Gupta</strong>
+                                <span>Premium User</span>
+                            </div>
+
+                        </div>
+
+
+                        <a href="profile.html" class="profile-button">
+                            <i class="fa-regular fa-user"></i>
+                            View Profile
+                        </a>
+
+                    </div>
+
+
+                    <div class="account-status">
+
+                        <div>
+                            <span class="status-dot"></span>
+                            Account Active
+                        </div>
+
+                        <span>Member since 2026</span>
+
+                    </div>
+
+
+                    <div class="danger-area">
+
+                        <div>
+                            <h3>Sign out</h3>
+
+                            <p>
+                                Sign out from your EVEN account on this device.
+                            </p>
+                        </div>
+
+                        <button
+                            class="logout-button"
+                            id="logoutButton"
+                            type="button">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="delete-area">
+
+                        <div>
+                            <h3>Delete Account</h3>
+                            <p>
+                                Permanently delete your account and associated data.
+                            </p>
+                        </div>
+
+                        <button
+                            class="delete-button"
+                            id="deleteAccount"
+                            type="button">
+
+                            Delete Account
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVE BAR -->
+                <div class="save-bar">
+
+                    <div>
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+                            Your settings are saved automatically on this device.
+                        </span>
+                    </div>
+
+                    <button id="saveSettings">
+                        <i class="fa-solid fa-check"></i>
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <span>© 2026 EVEN</span>
+
+            <span>Smart Expense Splitting</span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+            <strong id="toastTitle">Success</strong>
+            <span id="toastText">Settings saved successfully.</span>
+        </div>
+
+        <button id="closeToast">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>
+```

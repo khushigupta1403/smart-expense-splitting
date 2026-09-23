@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EVEN | Expenses</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <!-- IMPORTANT: Your file is expenses.css -->
+    <link rel="stylesheet" href="./css/expenses.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <span>EVEN</span>
+
+        </div>
+
+
+        <div class="menu-label">
+            MENU
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="groups.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Groups</span>
+
+            </a>
+
+
+            <a href="expenses.html" class="active">
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>Expenses</span>
+
+            </a>
+
+
+            <a href="analytics.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Analytics</span>
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="menu-label account-label">
+            ACCOUNT
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="profile.html">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <a href="login.html">
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <div class="page-title">
+
+                <span class="eyebrow">
+                    EXPENSE MANAGEMENT
+                </span>
+
+                <h1>
+                    Expenses
+                </h1>
+
+                <p>
+                    Track, manage and split your shared expenses.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="btn btn-export"
+                    type="button"
+                    onclick="exportExpenses()"
+                >
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Export
+
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    onclick="openExpenseModal()"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Expense
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <section class="summary-grid">
+
+
+            <!-- YOU PAID -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+
+                    <i class="fa-solid fa-arrow-up"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        You Paid
+                    </span>
+
+                    <strong id="youPaid">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- YOU OWE -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon red">
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        You Owe
+                    </span>
+
+                    <strong id="youOwe">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- GROUPS -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Groups
+                    </span>
+
+                    <strong id="groupCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXPENSE SECTION
+        ================================================== -->
+
+        <section class="expenses-card">
+
+
+            <div class="expenses-top">
+
+                <div>
+
+                    <h2>
+                        Recent Expenses
+                    </h2>
+
+                    <p>
+                        Your latest shared expenses
+                    </p>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="filters">
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="filter">
+
+                        <select
+                            id="categoryFilter"
+                            onchange="renderExpenses()"
+                        >
+
+                            <option value="All Categories">
+                                All Categories
+                            </option>
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Travel">
+                                Travel
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Bills">
+                                Bills
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+
+                    <!-- GROUP -->
+
+                    <div class="filter">
+
+                        <select
+                            id="groupFilter"
+                            onchange="renderExpenses()"
+                        >
+
+                            <option value="All Groups">
+                                All Groups
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+
+                    <!-- SORT -->
+
+                    <div class="filter">
+
+                        <select
+                            id="sortExpense"
+                            onchange="renderExpenses()"
+                        >
+
+                            <option value="latest">
+                                Latest
+                            </option>
+
+                            <option value="highest">
+                                Highest Amount
+                            </option>
+
+                            <option value="lowest">
+                                Lowest Amount
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPENSE LIST -->
+
+            <div id="expenseList"></div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         ADD EXPENSE MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="expenseModal"
+    >
+
+        <div class="modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        NEW ENTRY
+                    </span>
+
+                    <h2>
+                        Add Expense
+                    </h2>
+
+                    <p>
+                        Add details about your shared expense.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-button"
+                    type="button"
+                    onclick="closeExpenseModal()"
+                    aria-label="Close modal"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MODAL BODY -->
+
+            <div class="modal-body">
+
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Expense Title
+                    </label>
+
+                    <input
+                        id="title"
+                        type="text"
+                        placeholder="e.g. Beach shack dinner"
+                    >
+
+                </div>
+
+
+
+                <!-- AMOUNT + CATEGORY -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="amount">
+                            Amount
+                        </label>
+
+                        <div class="amount-field">
+
+                            <span>₹</span>
+
+                            <input
+                                id="amount"
+                                type="number"
+                                min="1"
+                                placeholder="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select id="category">
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Travel">
+                                Travel
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Bills">
+                                Bills
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GROUP + PAID BY -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="group">
+                            Group
+                        </label>
+
+                        <input
+                            id="group"
+                            type="text"
+                            placeholder="e.g. Goa Trip"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="paidBy">
+                            Paid By
+                        </label>
+
+                        <input
+                            id="paidBy"
+                            type="text"
+                            placeholder="e.g. You"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEMBERS + PAYMENT -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="members">
+                            Split Between
+                        </label>
+
+                        <input
+                            id="members"
+                            type="number"
+                            min="1"
+                            placeholder="No. of members"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="payment">
+                            Payment Mode
+                        </label>
+
+                        <select id="payment">
+
+                            <option value="UPI">
+                                UPI
+                            </option>
+
+                            <option value="Cash">
+                                Cash
+                            </option>
+
+                            <option value="Card">
+                                Card
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+
+                        Notes
+
+                        <span>
+                            (optional)
+                        </span>
+
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        placeholder="Add any extra detail..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- SAVE -->
+
+                <button
+                    class="save-expense"
+                    type="button"
+                    onclick="addExpense()"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Expense
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script src="js/api.js"></script>
+    <script src="./js/expenses.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Splitledger | Smart Expense Splitting</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+        <div class="logo-box">SL</div>
+
+        <div class="logo-text">
+            <strong>Splitledger</strong>
+            <span>Smart Expense Splitting</span>
+        </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+
+        <!-- WORKING THEME TOGGLE -->
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+        >
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <a href="login.html" class="login-btn">
+            Log in
+        </a>
+
+        <a href="register.html" class="get-started">
+            Get Started
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+    <button
+        class="mobile-menu"
+        id="mobileMenu"
+        type="button"
+        aria-label="Open menu"
+    >
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            <i class="fa-solid fa-sparkles"></i>
+            SIMPLE • FAIR • STRESS-FREE
+        </div>
+
+        <h1>
+            Split expenses.
+            <span>Stay friends.</span>
+        </h1>
+
+        <p class="hero-description">
+            Track shared expenses, split fairly, and settle
+            balances with zero confusion.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="register.html" class="primary-btn">
+                Start Splitting for Free
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#how-it-works" class="secondary-btn">
+                <span class="play-button">
+                    <i class="fa-solid fa-play"></i>
+                </span>
+                See how it works
+            </a>
+
+        </div>
+
+        <div class="user-proof">
+
+            <div class="avatars">
+                <div class="user-avatar avatar-one">A</div>
+                <div class="user-avatar avatar-two">R</div>
+                <div class="user-avatar avatar-three">K</div>
+                <div class="user-avatar avatar-four">S</div>
+                <div class="user-count">10K+</div>
+            </div>
+
+            <div class="proof-text">
+                <strong>Join 10,000+ happy users</strong>
+                <span>splitting smarter every day.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+
+        <div class="phone">
+
+            <div class="phone-top"></div>
+
+            <div class="phone-screen">
+
+                <div class="phone-status">
+                    <span>9:41</span>
+
+                    <div>
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
+                </div>
+
+                <div class="phone-title">
+                    <strong>Overview</strong>
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+
+                <div class="balance-card">
+
+                    <span>You are owed</span>
+
+                    <strong>₹1,070</strong>
+
+                    <small>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        +18% this month
+                    </small>
+
+                    <div class="mini-chart">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <div class="recent-title">
+                    Recent Group
+                </div>
+
+                <div class="group-card">
+
+                    <div class="group-heading">
+
+                        <div class="group-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div>
+                            <strong>Weekend Getaway</strong>
+                            <span>4 members</span>
+                        </div>
+
+                        <b>₹4,280</b>
+
+                    </div>
+
+                    <div class="member">
+
+                        <div class="member-avatar green">B</div>
+
+                        <div class="member-info">
+                            <strong>Bhumi</strong>
+                            <span>Paid ₹4,280</span>
+                        </div>
+
+                        <b class="green-text">+₹1,070</b>
+
+                    </div>
+
+                    <div class="member">
+
+                        <div class="member-avatar pink">K</div>
+
+                        <div class="member-info">
+                            <strong>Khushi</strong>
+                            <span>Owes ₹1,070</span>
+                        </div>
+
+                        <b class="red-text">-₹1,070</b>
+
+                    </div>
+
+                    <div class="member">
+
+                        <div class="member-avatar orange">A</div>
+
+                        <div class="member-info">
+                            <strong>Aman</strong>
+                            <span>Owes ₹1,070</span>
+                        </div>
+
+                        <b class="red-text">-₹1,070</b>
+
+                    </div>
+
+                    <div class="member">
+
+                        <div class="member-avatar purple">R</div>
+
+                        <div class="member-info">
+                            <strong>Riya</strong>
+                            <span>Owes ₹1,070</span>
+                        </div>
+
+                        <b class="red-text">-₹1,070</b>
+
+                    </div>
+
+                </div>
+
+
+                <div class="phone-nav">
+
+                    <div class="active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        <span>Groups</span>
+                    </div>
+
+                    <div class="add-button">+</div>
+
+                    <div>
+                        <i class="fa-solid fa-receipt"></i>
+                        <span>Expenses</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-wallet"></i>
+                        <span>Balance</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="floating-card expense-floating">
+
+            <div class="floating-heading">
+
+                <div class="floating-icon green-bg">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div>
+                    <strong>Total Expenses</strong>
+                    <span>This month</span>
+                </div>
+
+            </div>
+
+            <h3>₹4,280</h3>
+
+            <div class="green-line"></div>
+
+        </div>
+
+
+        <div class="floating-card settle-floating">
+
+            <div class="settle-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+
+                <strong>Settle Easily</strong>
+
+                <p>
+                    See who owes whom
+                    and settle in seconds.
+                </p>
+
+                <div class="small-avatars">
+                    <span>A</span>
+                    <span>R</span>
+                    <span>K</span>
+                    <span>S</span>
+
+                    <b>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </b>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <strong>All balances updated!</strong>
+                <span>Everything is clear ✨</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="feature-strip" id="features">
+
+    <div class="feature-item">
+        <div class="feature-icon purple-icon">
+            <i class="fa-solid fa-receipt"></i>
+        </div>
+
+        <div>
+            <h3>Track Expenses</h3>
+            <p>Add and organize shared expenses.</p>
+        </div>
+    </div>
+
+    <div class="feature-item">
+        <div class="feature-icon pink-icon">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+            <h3>Split Your Way</h3>
+            <p>Equal or custom amounts.</p>
+        </div>
+    </div>
+
+    <div class="feature-item">
+        <div class="feature-icon green-icon">
+            <i class="fa-solid fa-right-left"></i>
+        </div>
+
+        <div>
+            <h3>Know Who Owes</h3>
+            <p>See balances instantly.</p>
+        </div>
+    </div>
+
+    <div class="feature-item">
+        <div class="feature-icon blue-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h3>Settle Securely</h3>
+            <p>Clear and simple settlements.</p>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="stats-section">
+
+    <div class="stats-inner">
+
+        <div class="big-stat">
+            <div class="stat-circle">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+                <strong class="counter" data-target="10">0</strong>K+
+                <span>Active Users</span>
+            </div>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="big-stat">
+            <div class="stat-circle">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div>
+                <strong class="counter" data-target="2">0</strong>K+
+                <span>Groups Created</span>
+            </div>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="big-stat">
+            <div class="stat-circle">
+                <i class="fa-solid fa-shield"></i>
+            </div>
+
+            <div>
+                <strong>99%</strong>
+                <span>User Satisfaction</span>
+            </div>
+        </div>
+
+        <div class="testimonial">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <p>
+                Splitledger makes splitting expenses
+                so easy that we actually enjoy trips now!
+            </p>
+
+            <strong>— Riya Sharma</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="how-section" id="how-it-works">
+
+    <div class="section-heading">
+
+        <span>HOW IT WORKS</span>
+
+        <h2>Three simple steps.</h2>
+
+        <p>No spreadsheets. No confusion.</p>
+
+    </div>
+
+    <div class="steps">
+
+        <div class="step-card">
+
+            <div class="step-number">01</div>
+
+            <div class="step-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <h3>Create a group</h3>
+
+            <p>
+                Add your friends, roommates
+                or travel buddies.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">02</div>
+
+            <div class="step-icon">
+                <i class="fa-solid fa-receipt"></i>
+            </div>
+
+            <h3>Add expenses</h3>
+
+            <p>
+                Enter what was paid and
+                choose how to split it.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">03</div>
+
+            <div class="step-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h3>Settle up</h3>
+
+            <p>
+                See who owes whom and
+                settle everything easily.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-section" id="about">
+
+    <div class="about-card">
+
+        <div class="about-content">
+
+            <span>WHY SPLITLE DGER?</span>
+
+            <h2>
+                Less math.
+                <strong>More memories.</strong>
+            </h2>
+
+            <p>
+                Splitledger keeps shared money simple,
+                transparent and stress-free.
+            </p>
+
+            <div class="about-list">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Everyone sees the same balance
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Split expenses your way
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Settle in just a few taps
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-visual">
+
+            <div class="money-card card-a">
+                <i class="fa-solid fa-wallet"></i>
+                <strong>₹1,070</strong>
+                <span>You're owed</span>
+            </div>
+
+            <div class="money-card card-b">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <strong>₹4,280</strong>
+                <span>Group expenses</span>
+            </div>
+
+            <div class="about-circle"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta-section">
+
+    <div>
+
+        <span>READY TO SPLIT?</span>
+
+        <h2>
+            Make shared expenses
+            <strong>effortless.</strong>
+        </h2>
+
+        <p>
+            Create your first group and stop doing
+            expense math manually.
+        </p>
+
+    </div>
+
+    <a href="register.html" class="cta-button">
+        Get Started Free
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        <a href="#" class="logo">
+
+            <div class="logo-box">SL</div>
+
+            <div class="logo-text">
+                <strong>Splitledger</strong>
+                <span>Smart Expense Splitting</span>
+            </div>
+
+        </a>
+
+        <p>
+            Split money, not friendships.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Product</h4>
+
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#about">About</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Account</h4>
+
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Connect</h4>
+
+        <div class="social-links">
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+    © 2026 Splitledger. All rights reserved.
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

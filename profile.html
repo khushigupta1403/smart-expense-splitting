@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EVEN | Profile</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="css/profile.css">
+
+
+</head>
+
+
+<body>
+
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-wallet"></i>
+EVEN
+
+</div>
+
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+
+<li>
+<a href="groups.html">
+<i class="fa-solid fa-users"></i>
+Groups
+</a>
+</li>
+
+
+<li>
+<a href="expenses.html">
+<i class="fa-solid fa-money-bill-transfer"></i>
+Expenses
+</a>
+</li>
+
+
+<li>
+<a href="analytics.html">
+<i class="fa-solid fa-chart-pie"></i>
+Analytics
+</a>
+</li>
+
+
+<li>
+<a href="reports.html">
+<i class="fa-solid fa-file-lines"></i>
+Reports
+</a>
+</li>
+
+
+<li class="active">
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+
+<li>
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+
+
+
+<section class="main">
+
+
+
+<header>
+
+<h1>
+My Profile
+</h1>
+
+<p>
+Manage your personal information
+</p>
+
+
+</header>
+
+
+
+
+
+
+
+<div class="profile-container">
+
+
+
+<div class="profile-card">
+
+
+<div class="image-box">
+
+
+<img id="profileImage"
+src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+
+<input
+type="file"
+id="imageUpload"
+accept="image/*"
+onchange="uploadImage()">
+
+
+
+</div>
+
+
+
+<h2 id="displayName">
+Khushi Gupta
+</h2>
+
+
+<p id="displayEmail">
+khushi@email.com
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="form-card">
+
+
+<h2>
+Edit Profile
+</h2>
+
+
+
+<label>
+Full Name
+</label>
+
+
+<input
+id="name"
+placeholder="Enter name">
+
+
+
+
+
+<label>
+Email
+</label>
+
+
+<input
+id="email"
+placeholder="Enter email">
+
+
+
+
+
+<label>
+Phone
+</label>
+
+
+<input
+id="phone"
+placeholder="Enter phone">
+
+
+
+
+
+<button onclick="saveProfile()">
+
+Save Changes
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="form-card">
+
+
+<h2>
+Change Password
+</h2>
+
+
+<input
+type="password"
+id="oldPassword"
+placeholder="Current Password">
+
+
+<input
+type="password"
+id="newPassword"
+placeholder="New Password">
+
+
+<button onclick="changePassword()">
+
+Update Password
+
+</button>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+<script src="js/api.js"></script>
+<script src="js/profile.js"></script>
+
+
+</body>
+</html>
